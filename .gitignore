@@ -1,0 +1,5 @@
+.idea/
+node_modules/
+/assets/build/
+/assets/src/bower_components/jquery/
+/assets/src/bower_components/owl.carousel/

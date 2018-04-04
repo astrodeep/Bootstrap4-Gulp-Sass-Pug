@@ -1,0 +1,22 @@
+{
+  "name": "Alex",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Alex"
+  ],
+  "license": "ISC",
+  "homepage": "alexwork.ru",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/src/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owl.carousel": "^2.3.3"
+  }
+}
