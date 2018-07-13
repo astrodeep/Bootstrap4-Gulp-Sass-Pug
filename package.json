@@ -20,6 +20,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^3.2.1",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",

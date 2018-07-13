@@ -30,7 +30,7 @@ var path = {
     watch: {
         html:  'assets/src//template/**/*.pug',
         js:    'assets/src/js/**/*.js',
-        css:   'assets/src/style/**/*.scss',
+        css:   'assets/src/**/*.scss',
         img:   'assets/src/img/**/*.*',
         fonts: 'assets/srs/fonts/**/*.*'
     },
@@ -59,6 +59,7 @@ var gulp = require('gulp'),  // подключаем Gulp
     jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg
     pngquant = require('imagemin-pngquant'), // плагин для сжатия png
     jade = require('gulp-jade'), // плагин для jade
+    sassGlob = require('gulp-sass-glob'),
     rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
     del = require('del'); // плагин для удаления файлов и каталогов
 
@@ -83,11 +84,12 @@ gulp.task('css:build', function () {
     gulp.src(path.src.style) // получим main.scss
         .pipe(plumber()) // для отслеживания ошибок
         .pipe(sourcemaps.init()) // инициализируем sourcemap
+        .pipe(sassGlob()) // sass-glob
         .pipe(sass()) // scss -> css
         .pipe(autoprefixer({ // добавим префиксы
             browsers: autoprefixerList
         }))
-        .pipe(cleanCSS()) // минимизируем CSS
+        //.pipe(cleanCSS())  минимизируем CSS
         .pipe(sourcemaps.write('./')) // записываем sourcemap
         .pipe(gulp.dest(path.build.css)) // выгружаем в build
         .pipe(webserver.reload({stream: true})); // перезагрузим сервер

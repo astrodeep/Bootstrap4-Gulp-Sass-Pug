@@ -1,5 +1,5 @@
 // Переопределение дефолтных значений переменных Bootstrap 4 и определение своих
-@import "variables";
+
 
 // Подключение нужных SCSS исходников Bootstrap 4
 @import "../bower_components/bootstrap/scss/bootstrap";
@@ -12,5 +12,6 @@
 @import "../bower_components/owl.carousel/src/scss/owl.carousel";
 @import "../bower_components/owl.carousel/src/scss/owl.theme.default";
 
-// Подключение своих SCSS файлов
-@import "my";
+// Подключение SCSS
+@import '/core/**/*.scss';
+@import '../modules/**/*.scss';
